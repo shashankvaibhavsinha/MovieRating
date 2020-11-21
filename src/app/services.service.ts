@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { environment } from './../environments/environment';
-// import { Movies } from 'movies.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +17,7 @@ export class ServicesService {
   }
 
   getUpcomingMovies(): Observable<any>{
-    return this.http.get<Movies>(environment.upcomingAPI);
+    return this.http.get(environment.upcomingAPI);
   }
 
 }
