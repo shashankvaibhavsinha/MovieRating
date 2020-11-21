@@ -1,0 +1,30 @@
+<div class="background">
+  <div class="form-wrapper-outer">
+    <div class="form-logo">
+        <span class = "brand"><u>Top Rated Movie</u></span>
+    </div>
+    <div class="field-wrapper" style="overflow-y: scroll; height: 300px;">
+        <div *ngFor = "let res of result.results; let i = index">
+          <ul>
+            <li>
+              <a data-toggle="collapse" href="#expand{{i}}" role="button" aria-expanded="false" aria-controls="expand">
+                {{res.title}}
+              </a>
+            </li>
+            <div class="collapse" id="expand{{i}}">
+              <div style="font-size: 10px;">{{res.overview}}</div> 
+              <ul style="font-size: 10px;">
+                <li><b>Popularity:</b> {{res.popularity}}</li>
+                <li><b>Release Date:</b> {{res.release_date}}</li>
+                <li><b>Vote Average:</b> {{res.vote_average}}</li>
+                <li><b>Vote Count:</b> {{res.vote_count}}</li>
+              </ul>  
+            </div>
+          </ul>
+        </div>
+      </div>
+      <div class="field-wrapper">
+        <button type="submit" routerLink="../upcomingmovies" class="btn btn-primary">Upcoming Movies&nbsp;<i class="fa fa-arrow-right"></i></button>
+     </div>
+  </div>
+</div>

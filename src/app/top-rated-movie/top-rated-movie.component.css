@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Pacifico';
+  src: url('../../assets/font/Pacifico.ttf') format('truetype');
+}
+
+.form-wrapper-outer{
+  padding: 40px;
+  border-radius: 8px;
+  margin: auto;
+  width: 460px;
+  border: 2px solid rgb(194, 219, 243);
+  margin-top: 7%;
+  background: #fff;
+  opacity: 0.8;
+}
+.form-wrapper-outer .form-logo{
+  margin: 0px auto 15px;
+  width: 300px;
+}
+
+.form-wrapper-outer .form-logo img{
+  width: 30%;
+  vertical-align: top;
+}
+
+.brand{
+  font-family: Pacifico;
+  font-size: 40px;
+  vertical-align: top;
+  color: rgb(26, 72, 131);
+}
+
+.field-wrapper{
+  position: relative;
+  margin-bottom: 15px;
+  opacity: 1;
+}
+
+.field-wrapper input{
+  border: 1px solid #DADCE0;
+  padding: 15px;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.field-wrapper input:focus{
+  border:1px solid #1A73E8;
+}
