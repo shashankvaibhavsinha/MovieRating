@@ -4,7 +4,7 @@
         <span class = "brand"><u>Upcoming Movies</u></span>
     </div>
     <div class="field-wrapper" style="overflow-y: scroll; height: 300px;">
-        <div *ngFor = "let res of result.results; let i = index">
+        <div *ngFor = "let res of result; let i = index">
           <ul>
             <li>
               <a data-toggle="collapse" href="#expand{{i}}" role="button" aria-expanded="false" aria-controls="expand">

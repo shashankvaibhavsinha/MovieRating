@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
+import { Movies, MoviesData } from '../movies';
 
 @Component({
   selector: 'app-topratedmovie',
@@ -9,17 +10,15 @@ import { ServicesService } from '../services.service';
 export class TopRatedMovieComponent implements OnInit {
 
   constructor(private Services: ServicesService) { }
-  public getUrl;
-  result: any = [];
+  result: MoviesData;
 
   ngOnInit(): void {
-    this.getUrl = 'https://api.themoviedb.org/3/movie/top_rated?api_key=5fbddf6b517048e25bc3ac1bbeafb919';
     this.getTopRatedMovies();
   }
   getTopRatedMovies() {
-    this.Services.getTopRateMovies(this.getUrl).subscribe(
+    this.Services.getTopRateMovies().subscribe(
       res => {
-        this.result = res;
+        this.result = res.results;
       },
       err => {
         console.log(err);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../services.service';
+import { Movies, MoviesData } from '../movies';
 
 @Component({
   selector: 'app-upcomingmovies',
@@ -9,18 +10,15 @@ import { ServicesService } from '../services.service';
 export class UpcomingMoviesComponent implements OnInit {
 
   constructor(private Services: ServicesService) { }
-  public getUrl;
-  result: any = [];
+  result: MoviesData;
 
   ngOnInit(): void {
-    this.getUrl = 'https://api.themoviedb.org/3/movie/upcoming?api_key=5fbddf6b517048e25bc3ac1bbeafb919';
     this.getUpcomingMovies();
   }
   getUpcomingMovies() {
-    this.Services.getUpcomingMovies(this.getUrl).subscribe(
+    this.Services.getUpcomingMovies().subscribe(
       res => {
-        this.result = res;
-        console.log(res);
+        this.result = res.results;
       },
       err => {
         console.log(err);
