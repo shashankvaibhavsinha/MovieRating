@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
 import { environment } from './../environments/environment';
+import { Movies, MoviesData } from './movies';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,11 @@ export class ServicesService {
   constructor(private router:Router, 
               private http: HttpClient) { }
 
-  getTopRateMovies(): Observable<any>{
+  getTopRateMovies(): Observable<MoviesData>{
     return this.http.get(environment.topRatedAPI);
   }
 
-  getUpcomingMovies(): Observable<any>{
+  getUpcomingMovies(): Observable<MoviesData>{
     return this.http.get(environment.upcomingAPI);
   }
 
