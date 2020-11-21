@@ -14,11 +14,11 @@ export class ServicesService {
               private http: HttpClient) { }
 
   getTopRateMovies(): Observable<MoviesData>{
-    return this.http.get(environment.topRatedAPI);
+    return this.http.get<MoviesData>(environment.topRatedAPI);
   }
 
   getUpcomingMovies(): Observable<MoviesData>{
-    return this.http.get(environment.upcomingAPI);
+    return this.http.get<MoviesData>(environment.upcomingAPI);
   }
 
 }

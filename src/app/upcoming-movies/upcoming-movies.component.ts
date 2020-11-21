@@ -18,7 +18,7 @@ export class UpcomingMoviesComponent implements OnInit {
   getUpcomingMovies() {
     this.Services.getUpcomingMovies().subscribe(
       res => {
-        this.result = res.results;
+        this.result = res;
       },
       err => {
         console.log(err);

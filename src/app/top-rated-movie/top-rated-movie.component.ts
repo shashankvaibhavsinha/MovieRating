@@ -18,7 +18,7 @@ export class TopRatedMovieComponent implements OnInit {
   getTopRatedMovies() {
     this.Services.getTopRateMovies().subscribe(
       res => {
-        this.result = res.results;
+        this.result = res;
       },
       err => {
         console.log(err);
